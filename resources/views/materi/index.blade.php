@@ -9,7 +9,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Roles</h4>
+                        <h4 class="card-title">Materi</h4>
                          @if (session('status'))
                               <div class="row">
                                 <div class="col-sm-12">
@@ -22,9 +22,11 @@
                                 </div>
                               </div>
                             @endif
+                            @if(Auth::user()->rolesDetail->name === 'guru')
                         <div class="right">
-                            <a href="{{ route('role.create')}}" class="btn btn-sm btn-primary">Add Roles</a>
+                            <a href="{{ route('materi.create')}}" class="btn btn-sm btn-primary">Add Materi</a>
                         </div>
+                        @endif
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -32,6 +34,9 @@
                                 <thead class=" text-primary">
                                     <th>
                                         Name
+                                    </th>
+                                    <th>
+                                        File
                                     </th>
                                     <th>
                                         Creation Date
@@ -44,23 +49,26 @@
                                     </th>
                                 </thead>
                                 <tbody>
-                                    @foreach($roles as $role)
+                                    @foreach($materi as $mat)
                                     <tr>
                                         <td>
-                                            {{$role->name}}
+                                            {{$mat->name}}
                                         </td>
                                         <td>
-                                            {{$role->created_at->format('d-M-Y')}}
+                                            {{$mat->file}}
                                         </td>
                                         <td>
-                                            {{$role->update_at}}
+                                            {{$mat->created_at->format('d-M-Y')}}
+                                        </td>
+                                        <td>
+                                            {{$mat->update_at}}
                                         </td>
                                         <td class="text-right">
-                                            <form action="{{route('role.destroy', $role)}}" method="post">
+                                            <form action="{{route('materi.destroy', $role)}}" method="post">
                                              @csrf
                                              @method('delete')
                                              
-                                                <a href="{{route('role.edit', $role)}}" class="btn btn-sm btn-warning">Edit</a>
+                                                <a href="{{route('materi.edit', $role)}}" class="btn btn-sm btn-warning">Edit</a>
                                                         <button type="button" class="btn btn-danger btn-link" data-original-title="" title="" onclick="confirm('{{ __("Are you sure you want to delete this role?") }}') ? this.parentElement.submit() : ''">
                                       <i class="material-icons">close</i>
                                       <div class="ripple-container"></div>

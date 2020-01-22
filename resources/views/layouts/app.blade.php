@@ -67,8 +67,9 @@
     })(window,document,'script','dataLayer','GTM-NKDMSK6');</script> -->
     <!-- End Google Tag Manager -->
     <style type="text/css">
-        .ck-editor__editable{
-            min-height: 200px;
+        .ck-editor{
+            min-height: 300px;
+            min-width: 800px;
         }
     </style>
 </head>

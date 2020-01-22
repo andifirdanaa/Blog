@@ -9,10 +9,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Post</h4>
-                        <div class="right">
-                            <a href="{{route('posts.create')}} " class="btn btn-sm btn-primary">Add Posts</a>
-                        </div>
+                        <div class="row align-items-center">
+                                <div class="col-8">
+                                    <h3 class="mb-0">{{ __('Post') }}</h3>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <a href="{{ route('posts.create') }}" class="btn btn-sm btn-primary">{{ __('Add Post') }}</a>
+                                </div>
+                            </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

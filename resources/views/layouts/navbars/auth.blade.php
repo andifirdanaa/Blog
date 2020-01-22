@@ -37,23 +37,29 @@
                     </ul>
                 </div>
             </li>
-            <li class="{{ $elementActive == 'posts' ? 'active' : '' }}">
-                <a href="/posts">
+            <!-- <li class="{{ $elementActive == 'posts' ? 'active' : '' }}">
+                <a href="{{route('posts.index')}}">
                     <i class="nc-icon nc-box-2"></i>
                     <p>{{ __('Posts') }}</p>
+                </a>
+            </li> -->
+             <li class="{{ $elementActive == 'posts' ? 'active' : '' }}">
+                <a href="{{route('posts.index')}}">
+                    <i class="nc-icon nc-box-2"></i>
+                    <p>{{ __('Post') }}</p>
                 </a>
             </li>
             <li class="{{ $elementActive == 'role' ? 'active' : '' }}">
                 <a href="{{ route('role.index', 'role') }}">
-                    <i class="nc-icon nc-pin-3"></i>
+                    <i class="nc-icon nc-box-2"></i>
                     <p>{{ __('Roles') }}</p>
                 </a>
             </li>
             @endif
-            <li class="{{ $elementActive == 'map' ? 'active' : '' }}">
-                <a href="{{ route('page.index', 'map') }}">
-                    <i class="nc-icon nc-pin-3"></i>
-                    <p>{{ __('Maps') }}</p>
+             <li class="{{ $elementActive == 'role' ? 'active' : '' }}">
+                <a href="{{ route('materi.index', 'role') }}">
+                    <i class="nc-icon nc-box-2"></i>
+                    <p>{{ __('Materi') }}</p>
                 </a>
             </li>
             

@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['tittle','content','slug','thumbnail','user_id'];
+    
+    protected $fillable = ['tittle','content','slug','image','user_id'];
 	protected $dates = ['created_at'];
 	
     public function user(){
@@ -18,9 +19,9 @@ class Post extends Model
     	// }else{
     	// 	return asset('/images/no-thumbnail.jpg');
     	// }
-    	if(!$this->thumbnail){
+    	if(!$this->image){
     		return asset('/images/no-thumbnail.jpg');
     	}
-    		return $this->thumbnail;
+    		return $this->image;
     }
 }
